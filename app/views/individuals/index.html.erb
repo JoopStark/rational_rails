@@ -1,0 +1,10 @@
+<h1>Individuals</h1>
+
+<% @individuals.each do |individual| %>
+<h3> Email | Name | Age | Wants to improve</h3>
+<p><%= individual.email_display + " | " + 
+individual.name + " | " + 
+individual.age.to_s + " | " + 
+individual.improve.to_s
+ %></p>
+<% end %>
