@@ -24,7 +24,7 @@ RSpec.describe "individual index page", type: :feature do
     expect(page).to have_content(anne.email_display)
     expect(page).to have_content(anne.name)
     expect(page).to have_content(anne.age)
-    expect(page).to_not have_content(connor.improve)
+    expect(page).to_not have_content(connor.name)
   end
 
 
