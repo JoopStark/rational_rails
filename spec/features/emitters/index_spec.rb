@@ -35,19 +35,29 @@ RSpec.describe "emitters pages" do
 
   it "links to the individual index on emitter index" do
     visit "/emitters"
-    click_on "All individuals"
+    click_on "All Individuals"
 
     expect(current_path).to eq("/individuals")
   end
 
-  it "links to the emitter index" do
+  it "links to the individual index on emitter show" do
     anne = Individual.create!(email_display: "AnneSmith12@aol.com", name: "Anne Smith", age: 31, improve:true)
     vehicle = anne.emitters.create!(appliance: "Yukon", co2e_per_hour: 100, hours_per_day: 3, use: true)
     
     visit "/emitters/#{vehicle.id}"
-    click_on "All individuals"
+    click_on "All Individuals"
     save_and_open_page
     expect(current_path).to eq("/individuals")
+  end
+
+  it "links to the individual index on emitter show" do
+    anne = Individual.create!(email_display: "AnneSmith12@aol.com", name: "Anne Smith", age: 31, improve:true)
+    vehicle = anne.emitters.create!(appliance: "Yukon", co2e_per_hour: 100, hours_per_day: 3, use: true)
+    
+    visit "/emitters/#{vehicle.id}"
+    click_on "All Emitters"
+    save_and_open_page
+    expect(current_path).to eq("/emitters")
   end
 
 
