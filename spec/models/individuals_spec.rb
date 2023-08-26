@@ -11,8 +11,8 @@ RSpec.describe Individual, type: :model do
       @vehicle = @anne.emitters.create!(appliance: "Yukon", co2e_per_hour: 100, hours_per_day: 3, use: true)
       @hot_water = @anne.emitters.create!(appliance: "On Demand Water Heater", co2e_per_hour: 12, hours_per_day: 0.5, use: true)
     end
-    
-    describe "newest_on_top" do
+
+    describe "newest_on_top" do #I realized this is no diffent than putting straight into the controller.
       it "it puts the most recent person on top of the list" do
         expect(Individual.newest_on_top).to eq([@connor, @blair, @anne])
       end

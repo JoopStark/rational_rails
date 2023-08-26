@@ -32,4 +32,14 @@ RSpec.describe "emitters pages" do
     expect(page).to_not have_content("Still in use: " + hot_water.appliance)
     expect(page).to have_content("Belongs to: " + anne.name)
   end
+
+  it "links to the individual index" do
+    click_on "All individuals"
+
+    expect(current_path).to eq("/individuls")
+  end
+  
+  it "links to the emitter index"
+
+
 end

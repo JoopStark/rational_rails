@@ -1,6 +1,6 @@
 class IndividualsController < ApplicationController
   def index
-    @individuals = Individual.all
+    @individuals = Individual.newest_on_top.all
   end
 
   def show
