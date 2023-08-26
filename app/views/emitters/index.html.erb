@@ -1,13 +1,13 @@
 <h1>Emitters</h1>
 
+<h3> Name | CO2e/hour | Hours used / Day | Still using | Owner </h3>
 <% @emitters.each do |emitter| %>
-<h3> Name | CO2e/hour | Hours used / Day | Still using </h3>
 
 <p><%= emitter.appliance + " | " + 
 emitter.co2e_per_hour.to_s + " | " + 
 emitter.hours_per_day.to_s + " | " + 
-emitter.use.to_s + " | " +
-"individual info here"
+emitter.use.to_s  + " | " +
+emitter.individual.name
  %></p>
 
  <% end %>
