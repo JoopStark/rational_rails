@@ -5,8 +5,12 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   get "/individuals", to: "individuals#index"
+  get "/individuals/new", to: "individuals#new"
+  post "/individuals", to: "individuals#create"
   get "/individuals/:id", to: "individuals#show" 
+
   get "/emitters", to: "emitters#index"
   get "/emitters/:id", to: "emitters#show"
+
   get "/individuals/:individual_id/emitters", to: "individual_emitters#index"
 end

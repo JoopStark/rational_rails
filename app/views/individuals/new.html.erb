@@ -1,0 +1,14 @@
+<p> Artist Creater </p>
+<%= form_with url: '/individuals', method: :post, local: true do |form| %>
+
+<%= form.label :name %></br>
+<%= form.text_field :name %></br>
+<%= form.label :age %></br>
+<%= form.number_field :age %></br>
+<%= form.label :email %></br>
+<%= form.text_field :email %></br>
+<%= form.label :improve %></br>
+<%= form.check_box :improve %></br>
+
+<%= form.submit "Create Individual" %>
+<% end %>
