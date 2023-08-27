@@ -4,6 +4,7 @@
 <p><%= @individual.improve %></p>
 <p><%= @individual.emitters.count%></p>
 
+<p><%= link_to "#{@individual.name}'s Emitters", "/individuals/#{@individual.id}/emitters" %></p>
 
 <p><%= link_to "All Individuals", "/individuals" %></p>
 <p><%= link_to "All Emitters", "/emitters" %></p>
