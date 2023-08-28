@@ -11,11 +11,12 @@ class IndividualsController < ApplicationController
   end
 
   def create
-    individual = Individual.create(name: params[:name], 
-                                    age: params[:age].to_i, 
-                                    email_display: params[:email], 
-                                    improve: params[:improve]=="1" )
-                                    
+    individual = Individual.create(individual_params)
+
     redirect_to "/individuals/#{individual.id}"
+  end
+
+  def individual_params
+    params.permit(:name, :age, :email_display, :improve)
   end
 end
