@@ -1,12 +1,12 @@
 <h1><%= @individual.name %></h1>
-<%= form_with url: "/individuals/#{@individual.id}", method: :patch, local: true do |f| %>
+<%= form_with url: "/individuals/#{@individual.id}", method: :patch, data: { turbo: false } do |f| %>
 <%= f.label :name %></br>
-<%= f.text_field :name %></br>
+<%= f.text_field :name, value: @individual.name %></br>
 <%= f.label :age %></br>
-<%= f.number_field :age %></br>
+<%= f.number_field :age, value: @individual.age %></br>
 <%= f.label :email_display, "Email"  %></br>
-<%= f.text_field :email_display %></br>
+<%= f.text_field :email_display, value: @individual.email_display %></br>
 <%= f.label :improve %></br>
-<%= f.check_box :improve %></br>
+<%= f.check_box :improve, checked: @individual.improve ? "checked" : "unchecked" %></br>
 <%= f.submit "Update #{@individual.name}" %>
 <% end %>

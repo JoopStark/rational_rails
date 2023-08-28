@@ -1,5 +1,5 @@
 <p> Artist Creater </p>
-<%= form_with url: '/individuals', method: :post, local: true do |form| %>
+<%= form_with url: '/individuals', method: :post, data: { turbo: false } do |form| %>
 
 <%= form.label :name %></br>
 <%= form.text_field :name %></br>
