@@ -1,11 +1,12 @@
 <h1>Individuals</h1>
 
 <% @individuals.each do |individual| %>
-<h3> Email | Name | Age | Wants to improve</h3>
+<h3> Email | Name | Age | Wants to improve | Edit</h3>
 <p><%= individual.email_display + " | " + 
 individual.name + " | " + 
 individual.age.to_s + " | " + 
-individual.improve.to_s
+individual.improve.to_s + " | " %>
+<%= button_to "Edit #{individual.name}'s information", "/individuals/#{individual.id}/edit", method: :get
  %></p>
 <% end %>
 <p><%= link_to "Create New Individual", "/individuals/new" %> </p>

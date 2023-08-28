@@ -7,7 +7,8 @@ Rails.application.routes.draw do
   get "/individuals", to: "individuals#index"
   get "/individuals/new", to: "individuals#new"
   post "/individuals", to: "individuals#create"
-  get "/individuals/:id", to: "individuals#show" 
+  get "/individuals/:id", to: "individuals#show"
+  get "/individuals/:id/edit", to: "individuals#edit" 
 
   get "/emitters", to: "emitters#index"
   get "/emitters/:id", to: "emitters#show"

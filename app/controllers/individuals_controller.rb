@@ -19,4 +19,8 @@ class IndividualsController < ApplicationController
   def individual_params
     params.permit(:name, :age, :email_display, :improve)
   end
+
+  def edit
+    @individual = Individual.find(params[:id])
+  end
 end
