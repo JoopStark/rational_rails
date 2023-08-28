@@ -15,12 +15,18 @@ class IndividualsController < ApplicationController
 
     redirect_to "/individuals/#{individual.id}"
   end
+  
+  def edit
+    @individual = Individual.find(params[:id])
+  end
+  
+  def update
+    individual = Individual.update(individual_params)
+    
+    redirect_to "/individuals"
+  end
 
   def individual_params
     params.permit(:name, :age, :email_display, :improve)
-  end
-
-  def edit
-    @individual = Individual.find(params[:id])
   end
 end

@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   post "/individuals", to: "individuals#create"
   get "/individuals/:id", to: "individuals#show"
   get "/individuals/:id/edit", to: "individuals#edit" 
+  patch "/individuals/:id", to: "individuals#update"
 
   get "/emitters", to: "emitters#index"
   get "/emitters/:id", to: "emitters#show"
