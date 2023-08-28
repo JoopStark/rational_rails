@@ -21,7 +21,8 @@ class IndividualsController < ApplicationController
   end
   
   def update
-    individual = Individual.update(individual_params)
+    individual = Individual.find(params[:id])
+    individual.update(individual_params)
     
     redirect_to "/individuals"
   end

@@ -21,11 +21,10 @@ RSpec.describe "individual edit page" do
     visit "/individuals/#{anne.id}/edit"
 
     
-    # find("Annie Smitt").set("Anne Smith")
-    # field = find_field 'Name'
-    # field.set("Anne Smith")
-    # fill_in('Name', with: "Anne Smith", fill_options: {clear: :none})
-    save_and_open_page
+    fill_in("Name", with: "Anne Smith" )
+    fill_in("Age", with: 31 )
+    fill_in("Email", with: "AnneSmith12@aol.com" )
+    check("Improve")
     click_button "Update"
 
     expect(current_path).to eq("/individuals")
