@@ -61,5 +61,21 @@ RSpec.describe "Individual's emitters index" do
     expect(current_path).to eq("/emitters/#{camry.id}/edit")
   end
 
+  it "to be able to only show emitters by a certain condition" do
+    anne = Individual.create!(email_display: "AnneSmith12@aol.com", name: "Anne Smith", age: 31, improve:true)
+    airconditioner = anne.emitters.create!(appliance: "Air conditioner", co2e_per_hour: 100, hours_per_day: 3, use: true)
+    buick = anne.emitters.create!(appliance: "Buick", co2e_per_hour: 70, hours_per_day: 0.5, use: true)
+    camry = anne.emitters.create!(appliance: "Camry plugin", co2e_per_hour: 12, hours_per_day: 0.5, use: true)
 
+    visit "/individuals/#{anne.id}/emitters"
+
+    expect(page).to have_content(buick.appliance)
+    expect(page).to have_content(camry.appliance)
+
+    fill_in("Only show emitters with CO2e over", with: 50)
+    click_button ("Only return records with more than value of CO2e/hour")
+
+    expect(page).to have_content(camry.appliance)
+    expect(page).to_not have_content(buick.appliance)
+  end
 end
