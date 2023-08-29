@@ -15,10 +15,12 @@ Rails.application.routes.draw do
   get "/individuals/:id", to: "individuals#show"
   get "/individuals/:id/edit", to: "individuals#edit" 
   patch "/individuals/:id", to: "individuals#update"
+  delete "/individuals/:id", to: "individuals#destroy"
 
   get "/emitters", to: "emitters#index"
   get "/emitters/:id", to: "emitters#show"
   get "/emitters/:id/edit", to: "emitters#edit"
   patch "/emitters/:id", to: "emitters#update"
+  delete "/emitters/:id", to: "emitters#delete"
 
 end

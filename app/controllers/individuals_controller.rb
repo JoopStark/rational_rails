@@ -26,6 +26,12 @@ class IndividualsController < ApplicationController
     
     redirect_to "/individuals"
   end
+  
+  def destroy
+    individual = Individual.find(params[:id])
+    individual.destroy
+    redirect_to "/individuals"
+  end
 
 private
 
