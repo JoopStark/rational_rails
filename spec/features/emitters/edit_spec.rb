@@ -9,7 +9,7 @@ RSpec.describe "Edit Emitters Page" do
     visit "/emitters/#{vehicle.id}"
 
     click_button "Edit #{vehicle.appliance}"
-    save_and_open_page
+    # save_and_open_page
     expect(current_path).to eq("/emitters/#{vehicle.id}/edit")
   end
 end

@@ -6,4 +6,8 @@ class EmittersController < ApplicationController
   def show
     @emitter = Emitter.find(params[:id])
   end
+  
+  def edit
+    @emitter = Emitter.find(params[:id])
+  end
 end
