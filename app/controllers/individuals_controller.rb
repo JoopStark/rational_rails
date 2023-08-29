@@ -27,6 +27,8 @@ class IndividualsController < ApplicationController
     redirect_to "/individuals"
   end
 
+private
+
   def individual_params
     params.permit(:name, :age, :email_display, :improve)
   end

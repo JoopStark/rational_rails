@@ -1,0 +1,14 @@
+<p><%= "Add Emitter to #{@individual.name}'s account" %></p>
+<%= form_with url: "/individuals/#{@individual.id}/emitters", method: :post, data: { turbo: false } do |form| %>
+
+<%= form.label :appliance, "Name or Type" %></br>
+<%= form.text_field :appliance %></br>
+<%= form.label :co2e_per_hour, "CO2e/hour" %></br>
+<%= form.number_field :co2e_per_hour, step: :any %></br>
+<%= form.label :hours_per_day, "Hours/day" %></br>
+<%= form.number_field :hours_per_day, step: :any %></br>
+<%= form.label :use, "Still being used?" %></br>
+<%= form.check_box :use %></br>
+
+<%= form.submit "Add Emitter" %>
+<% end %>

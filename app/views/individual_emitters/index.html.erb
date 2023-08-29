@@ -2,5 +2,6 @@
 <% @emitters.each do |emitter| %>
 <p><%= emitter.appliance%></p>
 <% end %>
+<p><%= link_to "Add an emitter for #{@individual.name}", "/individuals/#{@individual.id}/emitters/new" %></p>
 <p><%= link_to "All Individuals", "/individuals" %></p>
 <p><%= link_to "All Emitters", "/emitters" %></p>
