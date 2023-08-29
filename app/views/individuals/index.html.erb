@@ -1,13 +1,14 @@
 <h1>Individuals</h1>
 
-<h3> Email | Name | Age | Wants to improve | Edit</h3>
+<h3> Email | Name | Age | Wants to improve | Edit | Delete</h3>
 <% @individuals.each do |individual| %>
 <p><%= individual.email_display + " | " + 
 individual.name + " | " + 
 individual.age.to_s + " | " + 
-individual.improve.to_s + " | " %>
-<%= button_to "Edit #{individual.name}'s information", "/individuals/#{individual.id}/edit", method: :get
- %></p>
+individual.improve.to_s + " | " + %>
+<%= button_to "Edit #{individual.name}'s information", "/individuals/#{individual.id}/edit", method: :get %>
+<%= button_to "Delete #{individual.name}", "/individuals/#{individual.id}", method: :delete %>
+ </p>
 <% end %>
 <p><%= link_to "Create New Individual", "/individuals/new" %> </p>
 <p><%= link_to "All Emitters", "/emitters" %></p>

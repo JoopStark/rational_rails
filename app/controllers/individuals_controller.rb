@@ -26,6 +26,10 @@ class IndividualsController < ApplicationController
     
     redirect_to "/individuals"
   end
+  
+  def destroy
+    redirect_to "/individuals"
+  end
 
 private
 
