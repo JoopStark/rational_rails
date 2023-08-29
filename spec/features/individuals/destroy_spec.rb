@@ -11,9 +11,9 @@ RSpec.describe "Destroy individual" do
     visit "/individuals"
 
     expect(page).to have_content(connor.name)
-
+    
     click_button "Delete #{connor.name}"
-
+    
     save_and_open_page
 
     expect(current_path).to eq("/individuals")
