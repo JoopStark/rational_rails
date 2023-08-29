@@ -10,3 +10,6 @@ class CreateIndividual < ActiveRecord::Migration[7.0]
     end
   end
 end
+
+
+# rails generate migration CreateIndividual email_display:string name:string age:integer improve:boolean

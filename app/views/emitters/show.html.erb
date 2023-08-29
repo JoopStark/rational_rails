@@ -1,0 +1,8 @@
+<h1><%=@emitter.appliance%></h1>
+
+<p> CO2e per hour: <%= @emitter.co2e_per_hour.to_s %></p> 
+<p> Hours used a day: <%= @emitter.hours_per_day.to_s%></p> 
+<p> Still in use: <%= @emitter.use.to_s %></p>
+<p> Belongs to: <%= @emitter.individual.name %></p>
+<p><%= link_to "All Individuals", "/individuals" %></p>
+<p><%= link_to "All Emitters", "/emitters" %></p>

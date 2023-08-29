@@ -10,3 +10,5 @@ class CreateEmitter < ActiveRecord::Migration[7.0]
     end
   end
 end
+
+# rails generate migration CreateEmitter appliance:string co2e_per_hour:float hours_per_day:float use:boolean

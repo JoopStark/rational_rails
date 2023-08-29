@@ -1,0 +1,14 @@
+<p> Individual Creator </p>
+<%= form_with url: '/individuals', method: :post, data: { turbo: false } do |form| %>
+
+<%= form.label :name %></br>
+<%= form.text_field :name %></br>
+<%= form.label :age %></br>
+<%= form.number_field :age %></br>
+<%= form.label :email_display, "Email"  %></br>
+<%= form.text_field :email_display %></br>
+<%= form.label :improve %></br>
+<%= form.check_box :improve %></br>
+
+<%= form.submit "Create Individual" %>
+<% end %>
