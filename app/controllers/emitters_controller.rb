@@ -17,6 +17,13 @@ class EmittersController < ApplicationController
     
     redirect_to "/emitters"
   end
+
+  def delete
+    emitter = Emitter.find(params[:id])
+    emitter.destroy
+    
+    redirect_to "/emitters"
+  end
   
 private
 
