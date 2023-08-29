@@ -34,4 +34,17 @@ RSpec.describe "Individual's emitters index" do
     # save_and_open_page
     expect(current_path).to eq("/emitters")
   end
+
+  it "links to the individual index on emitter index" do
+    anne = Individual.create!(email_display: "AnneSmith12@aol.com", name: "Anne Smith", age: 31, improve:true)
+    airconditioner = anne.emitters.create!(appliance: "Air conditioner", co2e_per_hour: 100, hours_per_day: 3, use: true)
+    camry = anne.emitters.create!(appliance: "Camry", co2e_per_hour: 12, hours_per_day: 0.5, use: true)
+    buick = anne.emitters.create!(appliance: "Buick", co2e_per_hour: 12, hours_per_day: 0.5, use: true)
+
+    visit "/individuals/#{anne.id}/emitters"
+
+    # save_and_open_page
+    expect("Buick").to appear_before("Camry")
+    expect("Air conditioner").to appear_before("Camry")
+  end
 end
