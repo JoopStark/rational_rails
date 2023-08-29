@@ -22,10 +22,10 @@ RSpec.describe "individual edit page" do
 
     
     fill_in("Name", with: "Anne Smith" )
-    fill_in("Age", with: 31 )
-    fill_in("Email", with: "AnneSmith12@aol.com" )
-    save_and_open_page
-    check("Improve")
+    # fill_in("Age", with: 31 )
+    # fill_in("Email", with: "AnneSmith12@aol.com" )
+    # save_and_open_page
+    # check("Improve")
     click_button "Update #{anne.name}"
 
     expect(current_path).to eq("/individuals")

@@ -2,13 +2,15 @@
 
 <h3> Name | CO2e/hour | Hours used / Day | Still using | Owner </h3>
 <% @emitters.each do |emitter| %>
-  
-  <p><%= emitter.appliance + " | " + 
-  emitter.co2e_per_hour.to_s + " | " + 
-  emitter.hours_per_day.to_s + " | " + 
-  emitter.use.to_s  + " | " +
-  emitter.individual.name
-  %></p>
-  
+  <% if emitter.use %>
+    <p><%= emitter.appliance + " | " + 
+    emitter.co2e_per_hour.to_s + " | " + 
+    emitter.hours_per_day.to_s + " | " + 
+    emitter.use.to_s  + " | " +
+    emitter.individual.name
+    %></p>
+    <p><%= link_to "Edit #{emitter.appliance}", "/emitters/#{emitter.id}/edit" %></p>
   <% end %>
+<% end %>
   <p><%= link_to "All Individuals", "/individuals" %></p>
+  # <p><%= link_to "In Use Emitters", "/emitters?" %></p>

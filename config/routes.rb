@@ -18,5 +18,7 @@ Rails.application.routes.draw do
 
   get "/emitters", to: "emitters#index"
   get "/emitters/:id", to: "emitters#show"
+  get "/emitters/:id/edit", to: "emitters#edit"
+  patch "/emitters/:id", to: "emitters#update"
 
 end
