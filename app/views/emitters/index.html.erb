@@ -10,6 +10,7 @@
     emitter.individual.name
     %></p>
     <p><%= link_to "Edit #{emitter.appliance}", "/emitters/#{emitter.id}/edit" %></p>
+    <p><%= button_to "Delete #{emitter.appliance}", "/emitters/#{emitter.id}", method: :delete %></p>
   <% end %>
 <% end %>
   <p><%= link_to "All Individuals", "/individuals" %></p>

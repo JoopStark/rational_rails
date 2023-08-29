@@ -20,7 +20,7 @@ RSpec.describe "Destroy emitter" do
     expect(page).to_not have_content(vehicle.appliance)
   end
 
-  it "can delete individuals from show page" do
+  it "can delete individuals from index page" do
     anne = Individual.create!(email_display: "AnneSmith12@aol.com", name: "Anne Smith", age: 31, improve:true)
     blair = Individual.create!(email_display: "blair@aol.com", name: "Blair", age: 32, improve:true)
     connor = Individual.create!(email_display: "Connor@aol.com", name: "Connor", age: 33, improve:false)
@@ -29,7 +29,7 @@ RSpec.describe "Destroy emitter" do
 
     visit "/emitters"
     
-    click_button "Delete #{vehicle.name}"
+    click_button "Delete #{vehicle.appliance}"
     
     expect(current_path).to eq("/emitters")
     expect(page).to_not have_content(vehicle.appliance)
