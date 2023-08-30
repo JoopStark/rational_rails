@@ -20,7 +20,7 @@ RSpec.describe "individual creation" do #ask question about the order in the con
     new_individual_id = Individual.last.id
     expect(current_path).to eq("/individuals/#{new_individual_id}")
     expect(page).to have_content("Doug")
-    expect(page).to have_content(24exi)
+    expect(page).to have_content(24)
     expect(page).to have_content(true)
   end
 

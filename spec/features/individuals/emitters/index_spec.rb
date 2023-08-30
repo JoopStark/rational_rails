@@ -72,10 +72,10 @@ RSpec.describe "Individual's emitters index" do
     expect(page).to have_content(buick.appliance)
     expect(page).to have_content(camry.appliance)
 
-    fill_in("Only show emitters with CO2e over", with: 50)
+    fill_in("Only show emitters over", with: 50)
     click_button ("Only return records with more than value of CO2e/hour")
-
-    expect(page).to have_content(camry.appliance)
-    expect(page).to_not have_content(buick.appliance)
+    save_and_open_page
+    expect(page).to_not have_content(camry.appliance)
+    expect(page).to have_content(buick.appliance)
   end
 end

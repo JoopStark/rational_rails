@@ -9,14 +9,14 @@
 <% end %>
 <p><%= link_to "Add an emitter for #{@individual.name}", "/individuals/#{@individual.id}/emitters/new" %></p>
 
-<%= form_with url: "/individuals/#{@individual.id}/emitters?sort=co2e_per_hour, method: :get, data: { turbo: false } do |f| %>
-<%= f.label :conditional, "Only show emitters with CO2e over"%></br>
-<%= f.number_field :conditional %></br>
+<%= form_with url: "/individuals/#{@individual.id}/emitters?sort=co2e_per_hour", method: :get, data: { turbo: false } do |f| %>
+<%= f.label :co2e_per_hour, "Only show emitters over"%></br>
+<%= f.number_field :co2e_per_hour %></br>
 <%= f.submit "Only return records with more than value of CO2e/hour" %>
-<% end %>
+<% end %>       
 
 <p><%= link_to "All Individuals", "/individuals" %></p>
 <p><%= link_to "All Emitters", "/emitters" %></p>
 
 
-#  <p><%= button_to "Only return records with more than value of CO2e/hour", "/individuals/#{@individual.id}/emitters" %></p>
+     

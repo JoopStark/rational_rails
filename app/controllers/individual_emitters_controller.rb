@@ -1,8 +1,12 @@
 class IndividualEmittersController < ApplicationController
   def index
-    # binding.pry
     @individual = Individual.find(params[:individual_id])
-    @emitters = @individual.emitters
+    if params[:co2e_per_hour] != nil 
+      @emitters = @individual.emitters.co2e_over(params[:co2e_per_hour])
+    else
+      @emitters = @individual.emitters
+    end
+    
   end
 
   def new
