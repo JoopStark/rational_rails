@@ -24,7 +24,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_24_025059) do
     t.bigint "individual_id", null: false
     t.index ["individual_id"], name: "index_emitters_on_individual_id"
   end
-  # rails generate migration CreateEmitter appliance:string co2e_per_hour:float hours_per_day:float use:boolean
 
   create_table "individuals", force: :cascade do |t|
     t.string "email_display"
@@ -34,9 +33,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_24_025059) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-  # rails generate migration CreateIndividual email_display:string name:string age:integer improve:boolean
 
   add_foreign_key "emitters", "individuals"
 end
-
-# rails generate migration AddIndividualToEmitters individual:references

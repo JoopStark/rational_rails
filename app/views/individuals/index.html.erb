@@ -6,6 +6,7 @@
 individual.name + " | " + 
 individual.age.to_s + " | " + 
 individual.improve.to_s %>
+<%= link_to "All #{individual.name}'s emitter", "/individuals/#{individual.id}/emitters" %>
 <%= button_to "Edit #{individual.name}'s information", "/individuals/#{individual.id}/edit", method: :get %>
 <%= button_to "Delete #{individual.name}", "/individuals/#{individual.id}", method: :delete %>
  </p>
